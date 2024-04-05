@@ -14,7 +14,6 @@ void Reverse(char str[], int len) { // 문자열 역순 정렬
 }
 
 int main() {
-
     char A[10001], B[10001], C[10002];
     int i, AN, BN, CN, temp, carry = 0, pA, pB;
     // AN, BN, CN : char형 배열 A, B, C의 크기가 몇인지(각각 몇자리 수 인지) 확인, 저장
