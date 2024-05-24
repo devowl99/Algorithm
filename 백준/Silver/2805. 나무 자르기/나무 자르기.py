@@ -2,10 +2,10 @@ import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
 
-tree = list(map(int, input().split()))
+tree = sorted(list(map(int, input().split())))
 
 start = 0
-end = max(tree)
+end = tree[n-1]
 while start <= end:
     H = (start + end)//2
     sum = 0
