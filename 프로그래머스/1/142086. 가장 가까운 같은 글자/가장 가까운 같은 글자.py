@@ -1,15 +1,19 @@
 def solution(s):
     answer = []
-    for i in range(len(s)):
-        check = False
-        save = [-1]
-        for j in range(i):
-            if s[j] == s[i]:
-                save.append(j)
-                check = True
-        if check:
-            answer.append(i-max(save))
+    answer.append(-1)
+    for i in range(1, len(s)):
+        n = 0
+        if s[i] == s[i-1]:
+            answer.append(1)
         else:
-            answer.append(-1)
+            for j in range(i, 0, -1):
+                n += 1
+                if s[j-1] == s[i]:
+                    answer.append(n)
+                    break
+                if n == i and s[0] != s[i]:
+                    answer.append(-1)
+                if n == i and s[0] == s[i]:
+                    answer.append(n)
 
     return answer
