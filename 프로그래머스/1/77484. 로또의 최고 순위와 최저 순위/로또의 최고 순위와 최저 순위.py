@@ -5,7 +5,7 @@ def solution(lottos, win_nums):
             count += 1
     
     zeros = lottos.count(0)
-    correctNum = [count+zeros, count+0]
+    correctNum = [count+zeros, count]
     answer = []
 
     for case in correctNum:
