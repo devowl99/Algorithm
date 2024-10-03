@@ -1,6 +1,5 @@
 def solution(progresses, speeds):
     deploy = []
-    days = 0
 
     while progresses:
         for i in range(len(progresses)):
