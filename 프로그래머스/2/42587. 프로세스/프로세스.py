@@ -1,11 +1,9 @@
-from collections import deque
-
 def solution(priorities, location):
-    q = deque([(i, priorities[i]) for i in range(len(priorities))]) # gpt
+    q = [[i, priorities[i]] for i in range(len(priorities))]
     check = 0
 
     while q:
-        get = q.popleft()
+        get = q.pop(0)
         hasbigger = False
 
         for left in q:
