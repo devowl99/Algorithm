@@ -1,17 +1,15 @@
 def solution(s):
-    answer = True
-    save = []
-    
+    stack = []
+
     for i in s:
         if i == '(':
-            save.append(i)
-        elif i == ')':
-            if save and save[-1] == '(':
-                save.pop()
+            stack.append(i)
+        else:
+            if stack and stack[-1] == '(':
+                stack.pop()
             else:
-                answer = False
-                break
-    if save:
-        answer = False
+                return False
 
-    return answer
+    if stack:
+        return False
+    return True
