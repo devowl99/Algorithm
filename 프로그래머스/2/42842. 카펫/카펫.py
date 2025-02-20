@@ -1,10 +1,10 @@
 def solution(brown, yellow):
-    sumAll = brown + yellow
-    answer = []
+    square = brown + yellow
 
-    for i in range (1, int(sumAll ** 0.5) + 1):
-        j = sumAll // i
-        if sumAll % i == 0:
+    for i in range (1, square):
+        if square % i == 0:
+            j = square // i
+            
             if (i - 2) * (j - 2) == yellow:
                 if i > j:
                     return [i, j]
