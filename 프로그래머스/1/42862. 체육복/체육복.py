@@ -1,19 +1,23 @@
-# chatgpt
 def solution(n, lost, reserve):
-    num_list = [1]*n
-    for i in range(n):
-        if i+1 in lost:
-            num_list[i] -= 1
-        if i+1 in reserve:
-            num_list[i] += 1
+    clothes = [1 for _ in range(n)]
 
-    for i in range(n):
-        if num_list[i] == 0:
-            if i > 0 and num_list[i-1] == 2:
-                num_list[i] += 1
-                num_list[i-1] -= 1
-            elif i < n-1 and num_list[i+1] == 2:
-                num_list[i] += 1
-                num_list[i+1] -= 1
+    for i in lost:
+        clothes[i-1] -= 1
+    for j in reserve:
+        clothes[j-1] += 1
 
-    return num_list.count(1) + num_list.count(2)
+    for k in range(n):
+        if clothes[k] == 0:
+            if k > 0 and clothes[k-1] > 1:
+                clothes[k-1] -= 1
+                clothes[k] += 1
+            elif k < n-1 and clothes[k+1] > 1:
+                clothes[k+1] -= 1
+                clothes[k] += 1
+
+    count = 0
+    for l in range(n):
+        if clothes[l] != 0:
+            count += 1
+
+    return count
