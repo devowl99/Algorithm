@@ -1,0 +1,28 @@
+T = int(input())
+for test_case in range(1, T + 1):
+    trash, n = map(str, input().split())
+    nums = list(map(str, input().split()))
+
+    zero = nums.count('ZRO')
+    one = nums.count('ONE')
+    two = nums.count('TWO')
+    three = nums.count('THR')
+    four = nums.count('FOR')
+    five = nums.count('FIV')
+    six = nums.count('SIX')
+    seven = nums.count('SVN')
+    eight = nums.count('EGT')
+    nine = nums.count('NIN')
+
+    answer0 = ' '.join(['ZRO'] * zero)
+    answer1 = ' '.join(['ONE'] * one)
+    answer2 = ' '.join(['TWO'] * two)
+    answer3 = ' '.join(['THR'] * three)
+    answer4 = ' '.join(['FOR'] * four)
+    answer5 = ' '.join(['FIV'] * five)
+    answer6 = ' '.join(['SIX'] * six)
+    answer7 = ' '.join(['SVN'] * seven)
+    answer8 = ' '.join(['EGT'] * eight)
+    answer9 = ' '.join(['NIN'] * nine)
+
+    print(f'#{test_case} {answer0} {answer1} {answer2} {answer3} {answer4} {answer5} {answer6} {answer7} {answer8} {answer9}')
