@@ -8,17 +8,16 @@ for test_case in range(1, T + 1):
 
     for i in range(2, 10):
         compare = num * i
-        check = 0
         compare_list = list(map(int, str(compare)))
 
         if len(compare_list) > num_len:
             break
 
         for j in range(num_len):
-            if compare_list[j] in num_list:
-                check += 1
+            if num_list[j] in compare_list:
+                compare_list.remove(num_list[j])
 
-        if check == num_len:
+        if not compare_list:
             is_possible = True
             break
 
