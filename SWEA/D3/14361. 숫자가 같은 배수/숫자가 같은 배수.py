@@ -1,23 +1,18 @@
+from collections import Counter
+
 T = int(input())
 for test_case in range(1, T + 1):
-    num = int(input())
-    num_list = list(map(int, str(num)))
-    num_len = len(num_list)
-
+    num = input()
+    num_counter = Counter(num)
     is_possible = False
 
     for i in range(2, 10):
-        compare = num * i
-        compare_list = list(map(int, str(compare)))
+        multiplied = str(int(num) * i)
 
-        if len(compare_list) > num_len:
-            break
+        if len(multiplied) != len(num):
+            continue
 
-        for j in range(num_len):
-            if num_list[j] in compare_list:
-                compare_list.remove(num_list[j])
-
-        if not compare_list:
+        if Counter(multiplied) == num_counter:
             is_possible = True
             break
 
