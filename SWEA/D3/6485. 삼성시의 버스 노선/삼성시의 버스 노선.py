@@ -17,10 +17,17 @@ for test_case in range(1, T + 1):
         covers.append(ran)
 
     answer = []
-    for j in Cj:
+    # for j in Cj:
+    #     count = 0
+    #     for cover in covers:
+    #         if j in cover:
+    #             count += 1
+    #     answer.append(count)
+
+    for c in Cj:
         count = 0
-        for cover in covers:
-            if j in cover:
+        for a, b in AB:
+            if a <= c <= b:
                 count += 1
         answer.append(count)
 
