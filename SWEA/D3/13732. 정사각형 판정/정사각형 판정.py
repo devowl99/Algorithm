@@ -27,9 +27,9 @@ for test_case in range(1, T + 1):
             if board[y].count('#') != 0:
                 can_make = False
 
-    first_sharp = save.index('#')
-    if save[first_sharp:first_sharp+closed_num] != '#'*closed_num:
-        can_make = False
+    # first_sharp = save.index('#')
+    # if save[first_sharp:first_sharp+closed_num] != '#'*closed_num:
+    #     can_make = False
 
     if can_make:
         print(f'#{test_case} yes')
