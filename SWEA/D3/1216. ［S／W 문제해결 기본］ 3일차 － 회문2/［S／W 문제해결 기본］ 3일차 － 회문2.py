@@ -17,12 +17,11 @@ for test_case in range(1, 11):
             break
 
         # 세로
-        # row, col 위치 확인 잘하자
-        for col in range(100):
-            for row in range(100-p_len+1):
+        for row in range(100):
+            for col in range(100-p_len+1):
                 lst = []
                 for c in range(p_len):
-                    lst.append(board[row+c][col])
+                    lst.append(board[col+c][row])
                 word2 = ''.join(lst)
                 if word2 == word2[::-1]:
                     gotcha = p_len
