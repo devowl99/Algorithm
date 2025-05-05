@@ -26,16 +26,17 @@ for test_case in range(1, 11):
             i += 1
             end = start + int(cmd[i])
             i += 1
-
-            del pw[start:end]
+            pw[start:end] = []
 
         else: # cmd[i] == 'A'
             i += 1
             count2 = int(cmd[i])
             i += 1
+            save = []
             for _ in range(count2):
-                pw.append(int(cmd[i]))
-                i += 1
+                save.append(int(cmd[i]))
+            pw.extend(save)
+            i += count2
 
     answer = pw[:10]
     print(f'#{test_case}', *answer)
