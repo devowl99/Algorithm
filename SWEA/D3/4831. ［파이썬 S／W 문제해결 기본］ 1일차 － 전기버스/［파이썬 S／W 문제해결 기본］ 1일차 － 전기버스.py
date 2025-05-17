@@ -1,7 +1,7 @@
 T = int(input())
 for test_case in range(1, T + 1):
     move, goal, station_num = map(int, input().split())
-    stations = list(map(int, input().split()))
+    stations = set(map(int, input().split()))
 
     current = 0
     count = 0
