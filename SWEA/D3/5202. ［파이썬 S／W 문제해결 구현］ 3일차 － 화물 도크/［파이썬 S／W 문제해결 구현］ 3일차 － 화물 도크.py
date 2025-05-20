@@ -2,7 +2,7 @@ T = int(input())
 for test_case in range(1, T + 1):
     n = int(input())
     work = [list(map(int, input().split())) for _ in range(n)]
-    work.sort(key=lambda x: x[1])
+    work.sort(key=lambda x: (x[1], x[0]))
 
     end_time = 0
     count = 0
