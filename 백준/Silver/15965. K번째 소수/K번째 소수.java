@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
 	static int K;
-	static final int MAX = 500_000;
+	static final int MAX = 10_000_000;
 	static boolean[] isPrime;
 	static List<Integer> prime;
 	
